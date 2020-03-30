@@ -3,10 +3,13 @@ var router = express.Router();
 var axios = require("axios");
 var tools = require("../public/javascripts/tools");
 
-/* GET home page. */
+/* GET home page && Get episodios. */
 router.get("/", function(req, res, next) {
-  res.render("index", {
-    title: "API Rick and Morty"
+  tools.getAll("episode").then(data => {
+    res.render("index", {
+      title: "Rick & Morty API - Lista de capítulos",
+      data: data
+    });
   });
 });
 
@@ -14,33 +17,6 @@ router.get("/", function(req, res, next) {
 router.get("/search", function(req, res, next) {
   res.render("index", {
     title: "API Rick and Morty"
-  });
-});
-
-/* GET episodios. */
-router.get("/episodio", function(req, res, next) {
-  tools.getAll("episode").then(data => {
-    res.render("episodio", {
-      title: "Episodios",
-      data: data
-    });
-  });
-});
-
-/* GET lugar. */
-router.get("/lugar", function(req, res, next) {
-  res.render("lugar", {
-    title: "Lugares"
-  });
-});
-
-/* GET personajes. */
-router.get("/pj", function(req, res, next) {
-  tools.getAll("character").then(data => {
-    res.render("pj", {
-      title: "Personajes",
-      data: data
-    });
   });
 });
 

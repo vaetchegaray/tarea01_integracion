@@ -2,3 +2,7 @@ extends layout
 
 block content
   h1= title
+  div.list-group
+    each val in data
+      a.list-group-item.list-group-item-action(href="episodio/" + val.id)= "[" + val.episode + "] " + val.name + " -- " + val.air_date
+      

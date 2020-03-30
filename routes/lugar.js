@@ -1,9 +1,12 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
+var axios = require("axios");
+var tools = require("../public/javascripts/tools");
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+/* GET lugar. */
+router.get("/", function(req, res, next) {
+  res.render("lugar", {
+    title: "Lugares"
+  });
 });
-
 module.exports = router;
