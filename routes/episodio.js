@@ -7,7 +7,7 @@ var tools = require("../public/javascripts/tools");
 router.get("/", function(req, res, next) {
   tools.getAll("episode").then(data => {
     res.render("index", {
-      title: "Lista de capítulos",
+      title: "Episodios",
       data: data
     });
   });

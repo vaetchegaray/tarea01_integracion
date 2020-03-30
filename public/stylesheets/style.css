@@ -10,3 +10,14 @@ a {
 footer {
   text-align: center;
 }
+
+.navbar-dark .navbar-brand {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 2rem;
+}
+
+#ep-list {
+  height: 100%;
+  overflow-y: auto;
+  max-height: 300px;
+}

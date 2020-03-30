@@ -2,4 +2,9 @@ extends layout
 
 block content
   h1= title
-  p 
+  p= "Tipo: " + data.type
+  p= "Dimensión: " + data.dimension
+  h2 Personajes residentes
+  div.list-group
+    each val in pjs
+      a.list-group-item.list-group-item-action(href="/pj/" + val.id)= val.name

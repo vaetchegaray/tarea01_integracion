@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h1= title
+  div.list-group
+    each val in data
+      a.list-group-item.list-group-item-action(href="/pj/" + val.id)= val.name

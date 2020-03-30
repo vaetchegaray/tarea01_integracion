@@ -1,6 +1,7 @@
 var axios = require("axios");
 
 module.exports = {
+  // GET all pages from ressource
   getAll: async function(ressource) {
     let data;
     try {
@@ -22,6 +23,7 @@ module.exports = {
     return data;
   },
 
+  // GET ressource from single ID
   getbyId: async function(ressource, id) {
     let data;
     try {
@@ -33,6 +35,7 @@ module.exports = {
     return data;
   },
 
+  // GET ressource from multiple ID
   getbymultipleId: async function(ressource, ids) {
     let data;
     try {
@@ -44,10 +47,16 @@ module.exports = {
     return data;
   },
 
+  // ID from url
   getIds: function(urls) {
     let id_array = [];
+    let id = "";
     urls.forEach(url => {
-      var id = url.match(/\/(\d+)+[\/]?/)[1];
+      try {
+        id = url.match(/\/(\d+)+[\/]?/)[1];
+      } catch (error) {
+        console.log(error);
+      }
       id_array.push(id);
     });
     return id_array;

@@ -3,13 +3,20 @@ extends layout
 block content
   div.container
     div.row
-      div.col-sm-4
+      div.col-sm
         img(src= data.image)
-      div.col-sm-8
+      div.col-sm
         h2= data.name
         p= "Status: " + data.status 
         p= "Especie: " + data.species 
         p= "Tipo: " + data.type 
         p= "Sexo: " + data.gender
-        a(href= "/lugar/" + data.origin.url)= "Origen: " + data.origin.name
-
+        p
+          a(href= "/lugar/" + lid1)= "Origen: " + data.origin.name
+        p
+          a(href= "/lugar/" + lid2)= "Último paradero: " + data.location.name
+      div.col-sm
+        h2 Episodios      
+        div.list-group#ep-list  
+          each ep in episodes
+            a.list-group-item.list-group-item-action(href="/episodio/" + ep.id)= "[" + ep.episode + "] " + ep.name
