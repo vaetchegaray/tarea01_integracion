@@ -1,10 +1,8 @@
 extends layout
 
 block content
-  h1= title
-  p= "Tipo: " + data.type
-  p= "Dimensión: " + data.dimension
-  h2 Personajes residentes
   div.list-group
+    p#list-header.list-group-item.active= title + " - " + data.type + " - " + data.dimension
+    h2 Residentes
     each val in pjs
       a.list-group-item.list-group-item-action(href="/pj/" + val.id)= val.name

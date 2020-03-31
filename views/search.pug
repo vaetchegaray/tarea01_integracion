@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  div.list-group
+    h4.list-group-item.active Episodios
+    each ep in episodios
+      a.list-group-item.list-group-item-action(href="/episodio/" + ep.id)= ep.name
+    h4.list-group-item.active Personajes
+    each pj in personajes
+      a.list-group-item.list-group-item-action(href="/pj/" + pj.id)= pj.name
+    h4.list-group-item.active Lugares
+    each lug in lugares
+      a.list-group-item.list-group-item-action(href="/lugar/" + lug.id)= lug.name

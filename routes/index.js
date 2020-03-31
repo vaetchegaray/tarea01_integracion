@@ -15,8 +15,30 @@ router.get("/", function(req, res, next) {
 
 /* GET search. */
 router.get("/search", function(req, res, next) {
-  res.render("index", {
-    title: "API Rick and Morty"
+  let episodios = [];
+  let personajes = [];
+  let lugares = [];
+  const search_text = req.query.search_text.toLowerCase();
+  tools.getAll("episode").then(eps => {
+    tools.getAll("character").then(pjs => {
+      tools.getAll("location").then(lugs => {
+        lugares = lugares.concat(
+          lugs.filter(lug => lug.name.toLowerCase().indexOf(search_text) > -1)
+        );
+        personajes = personajes.concat(
+          pjs.filter(pj => pj.name.toLowerCase().indexOf(search_text) > -1)
+        );
+        episodios = episodios.concat(
+          eps.filter(ep => ep.name.toLowerCase().indexOf(search_text) > -1)
+        );
+        res.render("search", {
+          title: "Resultados de la búsqueda",
+          episodios: episodios,
+          lugares: lugares,
+          personajes: personajes
+        });
+      });
+    });
   });
 });
 

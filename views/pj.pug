@@ -7,14 +7,15 @@ block content
         img(src= data.image)
       div.col-sm
         h2= data.name
-        p= "Status: " + data.status 
-        p= "Especie: " + data.species 
-        p= "Tipo: " + data.type 
-        p= "Sexo: " + data.gender
-        p
-          a(href= "/lugar/" + lid1)= "Origen: " + data.origin.name
-        p
-          a(href= "/lugar/" + lid2)= "Último paradero: " + data.location.name
+        div.list-group 
+          li.list-group-item= "Status: " + data.status 
+          li.list-group-item= "Especie: " + data.species 
+          li.list-group-item= "Tipo: " + data.type 
+          li.list-group-item= "Sexo: " + data.gender
+          a.list-group-item.list-group-item-action(href= "/lugar/" + lid1)= "Origen: " + data.origin.name
+            span.badge.badge-primary.badge-pill(style= {float: "right"}) +
+          a.list-group-item.list-group-item-action(href= "/lugar/" + lid2)= "Último paradero: " + data.location.name
+            span.badge.badge-primary.badge-pill(style= {float: "right"}) +
       div.col-sm
         h2 Episodios      
         div.list-group#ep-list  

@@ -1,6 +1,6 @@
 #main-container {
   padding: 30px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Verdana";
 }
 
 a {
@@ -19,5 +19,9 @@ footer {
 #ep-list {
   height: 100%;
   overflow-y: auto;
-  max-height: 300px;
+  max-height: 19em;
+}
+
+#list-header {
+  font-size: 2rem;
 }

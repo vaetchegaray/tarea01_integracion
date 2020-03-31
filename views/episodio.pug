@@ -1,8 +1,7 @@
 extends layout
 
 block content
-  h1= title + " " + data.name
   div.list-group
-    a.list-group-item.list-group-item-action.active= "[" + data.episode + "] " + data.name + " -- " + data.air_date
+    a#list-header.list-group-item.list-group-item-action.active= "[" + data.episode + "] " + data.name + " -- " + data.air_date
     each val in pjs
       a.list-group-item.list-group-item-action(href="/pj/" + val.id)= val.name
