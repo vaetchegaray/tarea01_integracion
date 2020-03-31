@@ -1,5 +1,5 @@
 {
-  "name": "memory",
+  "name": "rick_morty_api",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -14,5 +14,8 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "pug": "^2.0.4"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }
