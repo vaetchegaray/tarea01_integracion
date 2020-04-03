@@ -20,5 +20,5 @@
 - Node.js para el backend.
 - Express como framework web
 - Boootstrap para el estilo
-- Axios para las requests html
+- Axios para las requests http
 - Pug para renderizar las vistas
