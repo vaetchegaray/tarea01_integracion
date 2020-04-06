@@ -16,7 +16,8 @@
 - `/episodio/eid` : Ficha de Episodio
 - `/search` : Ruta de la búsqueda, recibe como parámetro el texto a buscar
 
-## Tecnologías utilizadas:
+## Tecnologías utilizadas
+
 - Node.js para el backend.
 - Express como framework web
 - Boootstrap para el estilo
