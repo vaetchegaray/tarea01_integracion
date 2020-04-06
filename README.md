@@ -18,7 +18,7 @@
 
 ## Tecnologías utilizadas
 
-- Node.js para el backend.
+- Node.js para el backend
 - Express como framework web
 - Boootstrap para el estilo
 - Axios para las requests http
